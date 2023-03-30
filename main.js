@@ -75,7 +75,6 @@ function currect() {
 
         trueOrfalse.textContent = "WRONG✖️";
         game.style.pointerEvents = "none";
-        item.style.backgroundColor = "rgb(3, 165, 3)";
       }
     });
   });
