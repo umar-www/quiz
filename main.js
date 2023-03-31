@@ -1,3 +1,5 @@
+"use strict";
+
 const num1 = document.getElementById("num1");
 const num2 = document.getElementById("num2");
 const amal = document.getElementById("amal");
@@ -16,8 +18,8 @@ let result;
 //  FUNCTION RAND()
 function rand() {
   let randAmal = ["*", "-", "+"].sort(() => Math.random() - 0.5).slice(2);
-  let randNum1 = Math.floor(Math.random() * 50) + 1;
-  let randNum2 = Math.floor(Math.random() * 50) + 1;
+  let randNum1 = Math.floor(Math.random() * 20) + 1;
+  let randNum2 = Math.floor(Math.random() * 20) + 1;
   num1.textContent = randNum1;
   num2.textContent = randNum2;
   amal.textContent = randAmal;
@@ -48,7 +50,6 @@ function answers() {
   ans.push(result);
 
   let newRand = ans.sort(() => Math.random() - 0.5);
-  console.log(newRand);
   a.textContent = newRand[0];
   b.textContent = newRand[1];
   c.textContent = newRand[2];
@@ -72,9 +73,15 @@ function currect() {
         item.style.color = "#fff";
         item.textContent = "✖️";
         container.classList.add("wrong");
-
         trueOrfalse.textContent = "WRONG✖️";
         game.style.pointerEvents = "none";
+        btn.forEach((elm) => {
+          if (elm.textContent == result) {
+            elm.style.backgroundColor = "rgb(3, 165, 3)";
+            elm.style.color = "#fff";
+            elm.textContent = "✔️";
+          }
+        });
       }
     });
   });
