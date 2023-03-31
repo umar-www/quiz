@@ -79,7 +79,7 @@ function currect() {
           if (elm.textContent == result) {
             elm.style.backgroundColor = "rgb(3, 165, 3)";
             elm.style.color = "#fff";
-            elm.textContent = "✔️";
+            elm.textContent = `${result}`;
           }
         });
       }
